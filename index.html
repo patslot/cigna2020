@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html ng-app="cigna2020">
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport"
+		content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>Cigna 自願醫保你點睇? </title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="./public/assets/bundle.js"></script>
+	<link rel="stylesheet" type="text/css" href="./public/assets/main.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92777396-36"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-92777396-36');
+	</script>
+
+</head>
+<body id="index" ng-controller="cigna2020Controller">
+	<div class="container">
+		<div class="row">
+			<div class="content col loading" ng-show="loading==true">
+				<div class="wrapper">
+					<div class="inner_wrapper centerloading">
+						<img src="public/loading.svg">
+						<p>loading</p>
+					</div>
+				</div>
+			</div>
+			<div class="content col" id="stage1" ng-show="stage==1">
+				<div class="row">
+						<div id="s1_1" class="col-md-6 offset-md-3  text-center">
+								<div class="row"> <figure><img class="img-fluid" src="public/s1_1.png"></figure></div>
+						</div>
+						<div id="s1_2" class="col-md-6 offset-md-3 " >
+							<a ng-click="tostage2();">
+								<img class="img-fluid" src="public/s1_2.png">
+							</a>	
+						</div>
+				</div>
+			</div>
+
+			<div class="content col" id="stage2" ng-show="stage==2">
+				<div class="row">
+					<div id="s2_1" class="col-md-6 offset-md-3  text-center">
+						<img class="img-fluid" src="public/s2_1.png">
+					</div>
+					<div id="s2_2" class="con_ans col-md-6 offset-md-3 " >
+						<a ng-click="tostage3();">
+							<img class="img-fluid" src="public/s2_2.png">
+						</a>	
+					</div>
+				</div>
+			</div>
+			<div class="content col" id="stage3" ng-show="stage==3">
+				<div class="row">
+					<div class="col-md-6 offset-md-3  text-center">
+						<div class="row">
+							<img class="img-fluid" src="public/s3_1.png">
+						</div>
+					</div>
+					<div id="s3_a" class="col-6 col-md-3 offset-md-3">
+						<div class="row">
+							<a ng-click="pickquestion(1);">
+								<img id="questionimg1" class="img-fluid pick" src="public/q1_1.png">
+							</a>
+						</div>
+					</div>
+					<div id="s3_b" class="col-6 col-md-3">
+						<div class="row">
+							<a ng-click="pickquestion(2);">
+								<img id="questionimg2" class="img-fluid pick" src="public/q1_2.png">
+							</a>
+						</div>							
+					</div>
+					<div id="s3_c" class="col-6 col-md-3 offset-md-3">
+						<div class="row">
+							<a ng-click="pickquestion(3);">
+								<img id="questionimg3" class="img-fluid pick" src="public/q1_3.png">
+							</a>
+						</div>
+					</div>
+					<div id="s3_d" class="col-6 col-md-3">
+						<div class="row">
+							<a ng-click="pickquestion(4);">
+								<img id="questionimg4" class="img-fluid pick" src="public/q1_4.png">
+							</a>
+						</div>							
+					</div>
+					<div id="s3_e" class="col-9 col-md-5 offset-md-3">
+						<div class="row">
+							<a ng-click="pickquestion(5);">
+								<img id="questionimg5" class="img-fluid pick" src="public/q1_5.png">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-6 offset-md-3  text-center">
+						<img class="img-fluid" src="public/s3_2.png">
+					</div>
+					<div class="col-md-6 offset-md-3  formfield">
+						<textarea  name="q2"  id="q2" ng-model="q2" >
+						</textarea>
+						<div class="errormsg" ng-show="regFormError.q2"><p>唔好講粗口</p></div>
+					</div>
+					<div id="s3_3"  class="col-md-6 offset-md-3  text-center">
+						<a ng-click="tostage4();">
+							<img class="img-fluid" src="public/s3_3.png">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="content col" id="stage4" ng-show="stage==4">
+				<div class="row">
+					<form id="regForm" name="regForm" method="post" novalidate autocomplete="off">
+						<div class="col-md-6 offset-md-3 text-center">
+							<img class="img-fluid" style="width: 100%;" src="public/s4_1.png">
+						</div>
+						<div class="col-md-6 offset-md-3 formfield">
+							<div class="formlabel">
+								<label>
+									姓氏<span>(必需與香港身份證上英文姓相同)</span>
+								</label>
+							</div>	
+							<input type="text" name="lastname"  id="lastname" ng-model="lastname" >
+							<div class="errormsg" ng-show="regFormError.lastname"><p>請填補您的姓氏</p></div>
+						</div>
+
+						<div class="col-md-6 offset-md-3 formfield">
+							<div class="formlabel">
+								<label>
+									名字<span>(必需與香港身份證上英文名相同)</span>
+								</label>
+							</div>	
+							<input type="text" name="firstname"  id="firstname" ng-model="firstname">
+							<div class="errormsg" ng-show="regFormError.firstname"><p>請填補您的名字</p></div>
+						</div>
+						<div class="col-md-6 offset-md-3 formfield">
+							<div class="formlabel">
+								<label>
+									性別
+								</label>
+							</div>	
+							<select class="select-css" type="text" name="sex"  id="sex" ng-model="sex">
+								<option value="M">男</option>
+								<option value="F"">女</option>
+							</select>
+
+							<div class="errormsg" ng-show="regFormError.sex"><p>請填補您的姓別</p></div>
+						</div>
+						<div class="col-md-6 offset-md-3 formfield">
+							<div class="formlabel">
+								<label>聯絡電話</label>
+							</div>	
+							<input type="text" name="mobile"  id="mobile" ng-model="mobile">
+							<div class="errormsg" ng-show="regFormError.mobile"><p>請提供有效的聯絡電話</p></div>
+						</div>
+						<div class="col-md-6 offset-md-3 formfield">
+							<div class="formlabel">
+								<label>電郵地址</label>
+							</div>	
+							<input type="text" name="email"  id="email" ng-model="email">
+							<div class="errormsg" ng-show="regFormError.email"><p>請提供有效的電郵地址</p></div>
+						</div>
+						
+						<div class="col-md-6 offset-md-3 formfield2">
+						
+								<label class="checkboxcontainer">
+									<input type="checkbox" ng-model="promotion" id="promotion">
+									<span class="checkmark"></span> 
+									本人同意及接受Next Mobile Limited將我的個人資料姓名、聯絡電話及電郵地址轉交信諾環球作直接促銷用途。
+								</label>
+				
+						</div>
+
+						<div class="col-md-6 offset-md-3 formfield2">
+						
+								<label class="checkboxcontainer">
+									<input type="checkbox" ng-model="tnc" id="tnc">
+									<span class="checkmark"></span>
+									本人確認已閱讀及明白Next Mobile Limited有關個人資料（私隱）條例通告，並同意使用本人的個人資料作直接促銷用途。
+								</label>
+				
+						</div>
+						<div class="col-md-6 offset-md-3">
+							<div style="right: 0; left: 0;" class="errormsg" ng-show="regFormError.tnc"><p style="text-align: center;">提交前請確認您已閱讀並同意以上內容</p></div>
+						</div>
+
+						<div class="con_ans col-md-6 offset-md-3 " style="text-align: center; margin-top:50px; margin-bottom:25px;">
+							<a ng-click="submitToServer();">
+								<img class="img-fluid" src="public/s4_2.png">
+							</a>	
+							<p>
+								<a href="#" data-toggle="modal" data-target="#tnca">條款及細則</a>
+							</p>	
+						</div>
+						
+						<div id="tnca" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+							
+									<div class="modal-body">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true"><img src="./public/btn_close.png"></span>
+											</button>
+										<div class="advertorialBody">
+												<img class="img-fluid" src="public/tnc.jpg">
+												<a id="tnclink2" href="https://www.nextdigital.com.hk/info/privacy.html" target="_blank"></a>
+												<a id="tnclink3" href="mailto:nextmobilemarketing＠nextdigital.com.hk" target="_blank"></a>
+												<a id="tnclink4" href="mailto:nextmobilemarketing＠nextdigital.com.hk" target="_blank"></a>
+										</div>
+									</div>
+								</div>    
+							</div>
+						</div> 	
+
+
+					</form>
+				</div>
+			</div>
+				
+				<div class="content" id="stage5" ng-show="stage==5">
+					<div class="row">
+						<div id="s5_1" class="col-md-6 offset-md-3  text-center">
+							<div class="row">
+								<img class="img-fluid" src="public/s5_1.png">
+								<a id="s5_2"  ng-click="urlstage5();">
+									<img class="img-fluid" src="public/s5_2.png">
+								</a>	
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</body>
+
+</html>

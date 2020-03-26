@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Login</title>
+		<!-- jquery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<style>
+			.hiddendata{
+				display: none;
+			}
+			.uploadedPhoto{
+				width: 120px;
+			}
+			.tab-pane{
+				position: absolute;
+			}
+			#lastname{
+				text-transform: uppercase;
+			}
+			#firstname{
+				text-transform: uppercase;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="container">
+					<nav class="navbar navbar-light bg-light">
+							<a class="navbar-brand" href="#">Cigna 2020 Campaign</a>
+					</nav>
+					<div class="row">
+							<div class="col-md-12">
+								<h4>Total number of record : <span id="num_of_record"></span></h4>
+							</div>
+					</div>
+					<div class="tab-content">
+								<div id="3" class="row tab-pane fade in active">
+									<div class="col-md-12">
+											<table class = "table" width = "100%">
+													<thead>
+															<tr>
+																<th>No.</th>
+																<th>LASTNAME</th>
+																<th>FIRSTNAME</th>
+																<th>SEX</th>
+																<th>MOBILE</th>
+																<th>EMAIL</th>
+																<th>Question 1</th>
+																<th>Question 2</th>
+																<th>PROMOTION</th>
+																<th>T&C</th>
+																<th>PLAYTIME</th>
+															</tr>
+													</thead>
+
+															
+													<tbody>
+													{% for User in users %}
+													<tr class="tablerow" id="row{{loop.index}}" >
+													<td align="center" >{{loop.index}}</td>
+													<td align="center" id="lastname" >{{User.LASTNAME}}</td>
+													<td align="center" id="firstname" >{{User.FIRSTNAME}}</td>
+													<td align="center" >{{User.SEX}}</td>
+													<td align="center" >{{User.MOBILE}}</td>
+													<td align="center" >{{User.EMAIL}}</td>
+													<td align="center" >{{User.Q1}}</td>
+													<td align="center" >{{User.Q2}}</td>
+													<td align="center" >{{User.PROMOTION}}</td>
+													<td align="center" >{{User.TNC}}</td>
+													<td align="center" >{{User.PLAYTIME }}</td>
+													</tr>
+													{% endfor %}
+													</tbody>
+											</table>	
+									</div>
+							</div>
+						
+			</div>
+			<script>
+
+$(document).ready(function () {
+				var lastrow = $('.tablerow').last()[0].id ; 
+					var numberofrecord = lastrow.slice(3);	
+					$('#num_of_record').html(numberofrecord);	
+});				
+			</script>
+	</body>
+</html>

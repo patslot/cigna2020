@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sunlife2019backend",
+  "private_key_id": "418dfd84e48ee0c5c3080d8a5063865b13755a89",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC1Xg34FnW8iPIZ\ngL4ltMcYGcYmAAZMHDUisZKgiStZFzUpiEXnHjSSElRYBRGUGBQOrEVs8sb6UVnx\nXBm+XCjwEapFEQT0VajWYA5SzEsplKyPvsYAMjdDimBKZAqt4bccuk/g60QBcSU/\n6+P7QuyIRlYI4DUOMeOOpW7XhjbvmI4johPCUVBHHKB8oK9hpU2m6F47ysTBv/yc\ndjosLXmBjbxYC1wQxX5AA9VyYW+U1PEeRS2CEez3p1anf3BeKa3Muic+3LPr5zUR\nSZ+cWSM7XDrsrK6hBgJKa6axCTjrHJN4dPnq/t0bye0Co6mNNBz97Z7mmJkmkwll\nrMagdcl3AgMBAAECggEAAWAsW/OtQr5V+iwk63uypoCl8gQLCC9bydHhML2JnVXh\noQyEqms37xAbh3iWXwvltXMu3aCW/y9E+65jdZmuWwMCfYUF1BkFCSDWZJNiUiqF\nOo8YYmHL7VCF4kD3zpGi0wfb8wx/Y6fPjNISh+veIaFJWSzi/VYS8BiNV2Fc7+lL\n6ElCz+Fi/GUF24q1HcG8SoCE3FGmTfBm4jdV+71tsgiQBjWte0xzhDCx9g+9pU2O\n+0P3UINuCos3kw/v5oE4qn5cvAfJAQ6Oq3Q0ubHP1/W9HXEmW88ESFJyZ5pttRgl\nDUtoVOPIiXYvFmhD2tu8J8sxS/lvMRmSJlpqwviiwQKBgQD9u3MLO2V3gyzrnitW\neQS7PegtvB/nEJYOFlFlZlwEc1iYRc+Y1zGnuUum/BcQQj8DZE9p1UShBUX1VYXA\n5/goliTg0gLJ8AlrgcwktYn0udZT2PFxzk8n1ih7a2NA4yitoe9k0GOt2TY57/yZ\nkQBWjOjBo4QFKBz9V2YHt/PfwQKBgQC2/Qf/i4FdYleAQWfF8yhmne+td2wg51ZP\n2ORoEkmjEDzWA3PMMqjkqsM6LLKnS5RkQ5dt1laqxPrjaqMipIfzQhqxmQbn9ClS\nfWAIkwByPcKHjpLp7nwZDnxey+NmvdG6+Igk1pGXkr/pW2SmClFualnXkA4OIZo5\nnqTt4Y53NwKBgQDO8a/nHU6opyhgE+Us5g9h2CAiDSnH/9MjMji5Bz9NsfY0W9vx\nwLITJiH50+nLrPxP++R5YSRUYESq0FIDAC96itsRMrhrk4dbU8X4usgF/fw87tge\nBjKxPw5Ne0y8g4mN9GGYTA7AoESGBKJ1bbpk3RCJvp/SxODAECR7byFNAQKBgQCN\nX9ZzF4v94wGpZF7Rb7iR94l6Ip7WmQR1MiPdR+u+YMgvrIEljSoxaMDmTCxG1jyy\nbgorYQKacw9G7ldVZ3pldXf8KDdOs7PNOHIejbw1hwOpCXz14Tvde/SYpLtu4E6O\nPn+ovmHDkixVFTgglC4vuVjqEzDYuBtYUvonkzEnZwKBgQD35adpvJwBphTj6fu/\nGDEx2pgPyIzsKI/no2WRZY+tZVruCoMaBU105lhPh7v3lJWiFZTp2JCs5pk0WyqR\nb2VEqR/WsLSKGCZmbPEUQcq079uI0HP9yhBqFYZEJtJ44JYOulPSIzotqq+CE5qB\np7Qpd1m+m3wwNedFnwlC7wAWfg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "patkwok@sunlife2019backend.iam.gserviceaccount.com",
+  "client_id": "104372665501368607826",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/patkwok%40sunlife2019backend.iam.gserviceaccount.com"
+}
