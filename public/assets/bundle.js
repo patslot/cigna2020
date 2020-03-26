@@ -56338,7 +56338,12 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     $scope.stage = 1 ;
    
     $scope.loading = false;
-    $scope.q1 = 0;
+    $scope.q1 = "";
+    $scope.q1_1 = 0;
+    $scope.q1_2 = 0;
+    $scope.q1_3 = 0;
+    $scope.q1_4 = 0;
+    $scope.q1_5 = 0;
     $scope.regFormError = {
         q1: false,
         q2: false,
@@ -56384,6 +56389,19 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+
+    function chunk(str, n) {
+        var ret = [];
+        var i;
+        var len;
+    
+        for(i = 0, len = str.length; i < len; i += n) {
+           ret.push(str.substr(i, n))
+        }
+    
+        return ret
+    };
+
     $scope.urlstage5 = function(url){
         gaEventcall('clientlink','click','to_cigna','to_cigna');
         window.open('https://www.cigna.com.hk/zh-hant/our-insurance-solutions/vhis/', '_blank');
@@ -56404,7 +56422,23 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     };  
     $scope.tostage4 = function() {
         var errormsg = ""; 
-        if($scope.q1==0){
+        $scope.q1="" ; 
+        if($scope.q1_1){
+            $scope.q1 = "A";
+        }
+        if($scope.q1_2){
+            $scope.q1 = $scope.q1 +  "B";
+        }
+        if($scope.q1_3){
+            $scope.q1 = $scope.q1 +  "C";
+        }
+        if($scope.q1_4){
+            $scope.q1 = $scope.q1 +  "D";
+        }
+        if($scope.q1_5){
+            $scope.q1 = $scope.q1 +  "E";
+        }
+        if($scope.q1==""){
             errormsg = errormsg + "請選擇問題1\n"; 
         }
         if(!$scope.q2){
@@ -56418,6 +56452,8 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
         if (errormsg !=""){
             alert(errormsg);
         }else{
+            $scope.q1 = chunk($scope.q1, 1).join(',');
+            console.log($scope.q1);
             $timeout(function () {
                 $scope.stage = 4;
                 $scope.$apply();
@@ -56426,32 +56462,57 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     }
 
     $scope.pickquestion = function(pick) {
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg1" ).attr("src","public/q1_1.png");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg2" ).attr("src","public/q1_2.png");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg3" ).attr("src","public/q1_3.png");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg4" ).attr("src","public/q1_4.png");
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg5" ).attr("src","public/q1_5.png");
+        // $( "#questionimg1" ).attr("src","public/q1_1.png");
+        // $( "#questionimg2" ).attr("src","public/q1_2.png");
+        // $( "#questionimg3" ).attr("src","public/q1_3.png");
+        // $( "#questionimg4" ).attr("src","public/q1_4.png");
+        // $( "#questionimg5" ).attr("src","public/q1_5.png");
         var filename = parseInt(pick); 
         __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg"+pick ).attr("src","public/q1_"+ filename +"_on.png");
      
         switch(pick) {
             case 1:
-              $scope.q1="A" ;
+                if ($scope.q1_1==0){
+                    $scope.q1_1=1; 
+                }else{
+                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg1" ).attr("src","public/q1_1.png");
+                    $scope.q1_1=0; 
+                }
               break;
             case 2:
-              $scope.q1="B" ;
+                if ($scope.q1_2==0){
+                    $scope.q1_2=1; 
+                }else{
+                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg2" ).attr("src","public/q1_2.png");
+                    $scope.q1_2=0; 
+                }
               break;
             case 3:
-              $scope.q1="C" ;
+                if ($scope.q1_3==0){
+                    $scope.q1_3=1; 
+                }else{
+                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg3" ).attr("src","public/q1_3.png");
+                    $scope.q1_3=0; 
+                }
               break;
             case 4:
-              $scope.q1="D" ;
+                if ($scope.q1_4==0){
+                    $scope.q1_4=1; 
+                }else{
+                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg4" ).attr("src","public/q1_4.png");
+                    $scope.q1_4=0; 
+                }
               break;
             case 5:
-              $scope.q1="E" ;
+                if ($scope.q1_5==0){
+                    $scope.q1_5=1; 
+                }else{
+                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg5" ).attr("src","public/q1_5.png");
+                    $scope.q1_5=0; 
+                }
               break;
             default:
-              $scope.q1="A" ;
+                $scope.q1="" ;
          }
     }
 
