@@ -4,13 +4,9 @@ window.$ = $;
 global.jQuery = $;
 
 import angular from 'angular';
-import "popper.js";
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'jquery-ui/ui/core';
-import 'jquery-ui/ui/widgets/slider';
-import 'jquery-ui-touch-punch';
-import 'jquery-ui/themes/base/all.css';
+// import "popper.js";
+// import 'bootstrap/dist/js/bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
 import "./scss/main.scss";
 
