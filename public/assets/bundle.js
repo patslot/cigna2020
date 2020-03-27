@@ -47205,7 +47205,7 @@ var cigna2020App = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('cigna
 // Define the `PhoneListController` controller on the `phonecatApp` module
 cigna2020App.controller('cigna2020Controller', function cigna2020Controller($scope, $timeout) {
 
-    $scope.stage = 1 ;
+    $scope.stage = 6 ;
    
     $scope.loading = false;
     $scope.q1 = "";

@@ -22,7 +22,7 @@ var cigna2020App = angular.module('cigna2020', []);
 // Define the `PhoneListController` controller on the `phonecatApp` module
 cigna2020App.controller('cigna2020Controller', function cigna2020Controller($scope, $timeout) {
 
-    $scope.stage = 1 ;
+    $scope.stage = 6 ;
    
     $scope.loading = false;
     $scope.q1 = "";
