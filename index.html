@@ -62,52 +62,40 @@
 							<img class="img-fluid" src="public/s3_1.png">
 					
 					</div>
-					<div id="s3_a" class="col-6 col-md-3 offset-md-3">
-						<div class="row">
-							<a ng-click="pickquestion(1);">
-								<img id="questionimg1" class="img-fluid pick" src="public/q1_1.png">
-							</a>
-						</div>
+					<div id="s3_a" class="col-md-6 offset-md-3">
+						<div class="row">	
+							<div class="col-6 text-right">
+								<a ng-click="pickquestion(1);">
+									<img id="questionimg1" class="img-fluid pick" src="public/q1_1.png">
+								</a>
+							</div>
+							<div class="col-6 text-left">
+								<a ng-click="pickquestion(2);">
+									<img id="questionimg2" class="img-fluid pick" src="public/q1_2.png">
+								</a>
+							</div>	
+						</div>		
 					</div>
-					<div id="s3_b" class="col-6 col-md-3">
-						<div class="row">
-							<a ng-click="pickquestion(2);">
-								<img id="questionimg2" class="img-fluid pick" src="public/q1_2.png">
-							</a>
-						</div>							
-					</div>
-					<div id="s3_c" class="col-6 col-md-3 offset-md-3">
-						<div class="row">
-							<a ng-click="pickquestion(3);">
-								<img id="questionimg3" class="img-fluid pick" src="public/q1_3.png">
-							</a>
-						</div>
-					</div>
-					<div id="s3_d" class="col-6 col-md-3">
-						<div class="row">
-							<a ng-click="pickquestion(4);">
-								<img id="questionimg4" class="img-fluid pick" src="public/q1_4.png">
-							</a>
-						</div>							
-					</div>
-					<div id="s3_e" class="col-9 col-md-5 offset-md-3">
-						<div class="row">
-							<a ng-click="pickquestion(5);">
-								<img id="questionimg5" class="img-fluid pick" src="public/q1_5.png">
-							</a>
-						</div>
-					</div>
+					
 					<div class="col-md-6 offset-md-3  text-center">
 						<img class="img-fluid" src="public/s3_2.png">
 					</div>
 					<div class="col-md-6 offset-md-3  formfield">
 						<textarea  name="q2"  id="q2" ng-model="q2" >
 						</textarea>
-						<div class="errormsg" ng-show="regFormError.q2"><p>唔好講粗口</p></div>
+						<div class="errormsg" ng-show="regFormError.q2"><p>請勿輸入粗言穢語</p></div>
+					</div>
+					<div class="col-md-6 offset-md-3  text-center">
+						<img class="img-fluid" src="public/s3_3.png">
+					</div>
+					<div class="col-md-6 offset-md-3  formfield">
+						<textarea  name="q3"  id="q3" ng-model="q3" >
+						</textarea>
+						<div class="errormsg" ng-show="regFormError.q3"><p>請勿輸入粗言穢語</p></div>
 					</div>
 					<div id="s3_3"  class="col-md-6 offset-md-3  text-center">
 						<a ng-click="tostage4();">
-							<img class="img-fluid" src="public/s3_3.png">
+							<img class="img-fluid" src="public/s3_4.png">
 						</a>
 					</div>
 				</div>
@@ -164,7 +152,11 @@
 							<input type="text" name="email"  id="email" ng-model="email">
 							<div class="errormsg" ng-show="regFormError.email"><p>請提供有效的電郵地址</p></div>
 						</div>
-						
+						<div class="col-md-6 offset-md-3">
+							<p style="text-align: center;">
+								<a href="#" data-toggle="modal" data-target="#tnca" style="text-decoration: underline;">條款及細則</a>
+							</p>	
+						</div>
 						<div class="col-md-6 offset-md-3 formfield2">
 						
 								<label class="checkboxcontainer">
@@ -192,9 +184,7 @@
 							<a ng-click="submitToServer();">
 								<img class="img-fluid" src="public/s4_2.png">
 							</a>	
-							<p>
-								<a href="#" data-toggle="modal" data-target="#tnca">條款及細則</a>
-							</p>	
+						
 						</div>
 						
 						<div id="tnca" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">

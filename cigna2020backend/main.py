@@ -120,6 +120,7 @@ class Users(ndb.Model):
     EMAIL = ndb.StringProperty(default='')
     Q1 = ndb.StringProperty(default='')
     Q2 = ndb.StringProperty(default='')
+    Q3 = ndb.StringProperty(default='')
     PROMOTION = ndb.StringProperty(default='')
     TNC = ndb.StringProperty(default='')
         
@@ -141,6 +142,7 @@ class SubmitHandler(webapp2.RequestHandler):
         pemail = self.request.get('email')
         q1 = self.request.get('q1')
         q2 = self.request.get('q2')
+        q3 = self.request.get('q3')
         ppromotion = self.request.get('promotion')
         ptnc = self.request.get('tnc')
         ptime = datetime.now() + timedelta(hours=8)
@@ -148,7 +150,7 @@ class SubmitHandler(webapp2.RequestHandler):
         return_data = {}
         try:
             if getbyphone(pmobile) == 0 :
-                users = Users(LASTNAME=plastname,FIRSTNAME=pfirstname,SEX=psex,MOBILE=pmobile,EMAIL=pemail,Q1=q1,Q2=q2,PROMOTION=ppromotion,TNC=ptnc,PLAYTIME=ptime).put()
+                users = Users(LASTNAME=plastname,FIRSTNAME=pfirstname,SEX=psex,MOBILE=pmobile,EMAIL=pemail,Q1=q1,Q2=q2,Q3=q3,PROMOTION=ppromotion,TNC=ptnc,PLAYTIME=ptime).put()
                 #user=users.get_current_user().user_id(),
                 print "SUCCESS"
                 return_data['status'] = "Success"

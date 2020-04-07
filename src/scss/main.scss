@@ -343,7 +343,7 @@ a{
         position: absolute; 
         left:0; 
         right:0; 
-        bottom: 55px; 
+        bottom: 30px; 
         img{ width: 50%; }
         
     }
@@ -362,12 +362,21 @@ a{
         padding:5px 10px;
         border-radius: 10px;
     }
+    #q3{
+        width: 100%;
+        height: 4em;
+        line-height: 1.8em;
+        padding:5px 10px;
+        border-radius: 10px;
+    }
     #s3_3{
         text-align: center; 
         img{ width: 100%; }
     }
    #s5_2{
         position: absolute;
+        width: 100%;
+        left: 0;
         bottom: 66px;
    }
 }
@@ -519,6 +528,7 @@ a{
 
 .pick{
     padding: 5px;
+    width: 60%;
 }
 .shadowfilter {
     -webkit-filter: drop-shadow(2px 0px 7px rgba(0, 0, 0, 0.5));
@@ -560,15 +570,15 @@ a{
     display: block;
     width: 63%;
     height: 1em;
-    top: 1220px;
-    left: 81px;
+    top: 1333px;
+    left: 49px;
     @media only screen and (max-width: 576px) {
         position: absolute;
         display: block;
         width: 62%;
         height: 1%;
-        top: 81.2%;
-        left: 15%;
+        top: 82.7%;
+        left: 10%;
     }
 }
 
@@ -577,14 +587,14 @@ a{
     display: block;
     width: 40%;
     height: 1em;
-    top: 1360px;
+    top: 1471px;
     left: 274px;
     @media only screen and (max-width: 576px) {
         position: absolute;
         display: block;
         width: 39%;
         height: 1%;
-        top: 90.2%;
+        top: 91.2%;
         left: 55%;
     }
 }
@@ -593,16 +603,16 @@ a{
 #tnclink4{
     position: absolute;
     display: block;
-    width: 13%;
+    width: 19%;
     height: 1em;
-    top: 1375px;
+    top: 1487px;
     left: 48px;
     @media only screen and (max-width: 576px) {
         position: absolute;
         display: block;    
         width: 17%;
         height: 1%;
-        top: 91.4%;
+        top: 92%;
         left: 10%;
     }
 }

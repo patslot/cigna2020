@@ -56335,18 +56335,16 @@ var cigna2020App = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('cigna
 // Define the `PhoneListController` controller on the `phonecatApp` module
 cigna2020App.controller('cigna2020Controller', function cigna2020Controller($scope, $timeout) {
 
-    $scope.stage = 1 ;
+    $scope.stage = 1;
    
     $scope.loading = false;
     $scope.q1 = "";
     $scope.q1_1 = 0;
     $scope.q1_2 = 0;
-    $scope.q1_3 = 0;
-    $scope.q1_4 = 0;
-    $scope.q1_5 = 0;
     $scope.regFormError = {
         q1: false,
         q2: false,
+        q3: false,
         lastname : false,
         firstname : false,
         sex : false,
@@ -56404,10 +56402,11 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
 
     $scope.urlstage5 = function(url){
         gaEventcall('clientlink','click','to_cigna','to_cigna');
-        window.open('https://www.cigna.com.hk/zh-hant/our-insurance-solutions/vhis/', '_blank');
+        window.open('https://www.cigna.com.hk/zh-hant/our-insurance-solutions/vhis/?utm_source=AppleDaily&utm_medium=Minigame&utm_campaign=SG_TC_CONV_AppleDaily_VHIS&utm_term=img_VHIS_vhis001', '_blank');
     }
   
     $scope.tostage2 = function () {
+        gaEventcall('clientlink','click','開始','開始');
         $timeout(function () {
             $scope.stage = 2;
             $scope.$apply();
@@ -56422,22 +56421,6 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     };  
     $scope.tostage4 = function() {
         var errormsg = ""; 
-        $scope.q1="" ; 
-        if($scope.q1_1){
-            $scope.q1 = "A";
-        }
-        if($scope.q1_2){
-            $scope.q1 = $scope.q1 +  "B";
-        }
-        if($scope.q1_3){
-            $scope.q1 = $scope.q1 +  "C";
-        }
-        if($scope.q1_4){
-            $scope.q1 = $scope.q1 +  "D";
-        }
-        if($scope.q1_5){
-            $scope.q1 = $scope.q1 +  "E";
-        }
         if($scope.q1==""){
             errormsg = errormsg + "請選擇問題1\n"; 
         }
@@ -56448,11 +56431,16 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
                 errormsg = errormsg + "請勿輸入粗言穢語\n"; 
             }
         }
-        
+        if(!$scope.q3){
+            errormsg = errormsg + "請輸入問題3\n"; 
+        }else{
+            if( validateDirtywords($scope.q3)){
+                errormsg = errormsg + "請勿輸入粗言穢語\n"; 
+            }
+        }
         if (errormsg !=""){
             alert(errormsg);
         }else{
-            $scope.q1 = chunk($scope.q1, 1).join(',');
             console.log($scope.q1);
             $timeout(function () {
                 $scope.stage = 4;
@@ -56462,54 +56450,18 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     }
 
     $scope.pickquestion = function(pick) {
-        // $( "#questionimg1" ).attr("src","public/q1_1.png");
-        // $( "#questionimg2" ).attr("src","public/q1_2.png");
-        // $( "#questionimg3" ).attr("src","public/q1_3.png");
-        // $( "#questionimg4" ).attr("src","public/q1_4.png");
-        // $( "#questionimg5" ).attr("src","public/q1_5.png");
+         __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg1" ).attr("src","public/q1_1.png");
+         __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg2" ).attr("src","public/q1_2.png");
+      
         var filename = parseInt(pick); 
         __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg"+pick ).attr("src","public/q1_"+ filename +"_on.png");
      
         switch(pick) {
             case 1:
-                if ($scope.q1_1==0){
-                    $scope.q1_1=1; 
-                }else{
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg1" ).attr("src","public/q1_1.png");
-                    $scope.q1_1=0; 
-                }
+                $scope.q1="想"; 
               break;
             case 2:
-                if ($scope.q1_2==0){
-                    $scope.q1_2=1; 
-                }else{
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg2" ).attr("src","public/q1_2.png");
-                    $scope.q1_2=0; 
-                }
-              break;
-            case 3:
-                if ($scope.q1_3==0){
-                    $scope.q1_3=1; 
-                }else{
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg3" ).attr("src","public/q1_3.png");
-                    $scope.q1_3=0; 
-                }
-              break;
-            case 4:
-                if ($scope.q1_4==0){
-                    $scope.q1_4=1; 
-                }else{
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg4" ).attr("src","public/q1_4.png");
-                    $scope.q1_4=0; 
-                }
-              break;
-            case 5:
-                if ($scope.q1_5==0){
-                    $scope.q1_5=1; 
-                }else{
-                    __WEBPACK_IMPORTED_MODULE_0_jquery___default()( "#questionimg5" ).attr("src","public/q1_5.png");
-                    $scope.q1_5=0; 
-                }
+                $scope.q1="唔想"; 
               break;
             default:
                 $scope.q1="" ;
@@ -56588,6 +56540,7 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
             payload['tnc'] =  $scope.tnc ;
             payload['q1'] = $scope.q1 ;
             payload['q2'] = $scope.q2 ;
+            payload['q3'] = $scope.q3 ;
 
             //
             if (window.console) {
