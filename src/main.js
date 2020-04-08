@@ -97,13 +97,14 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
     }
   
     $scope.tostage2 = function () {
-        gaEventcall('clientlink','click','開始','開始');
+        gaEventcall('clientlink','click','page1','開始');
         $timeout(function () {
             $scope.stage = 2;
             $scope.$apply();
         }, 0);
     };  
     $scope.tostage3 = function () {
+        gaEventcall('clientlink','click','page2','問卷');
         $timeout(function () {
             $scope.stage = 3;
             $scope.$apply();
@@ -132,6 +133,8 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
         if (errormsg !=""){
             alert(errormsg);
         }else{
+
+            gaEventcall('clientlink','click','page3','登記');
             console.log($scope.q1);
             $timeout(function () {
                 $scope.stage = 4;
@@ -245,12 +248,14 @@ cigna2020App.controller('cigna2020Controller', function cigna2020Controller($sco
                 }
                 if (response.status == "Success") {
                     $timeout(function () {
+                        gaEventcall('clientlink','click','page4','成功提交');
                         $scope.loading = false;
                         $scope.stage = 5;
                         $scope.$apply();
                     }, 0);
                 } else if (response.status == "Duplicated") {
                     $timeout(function () {
+                        gaEventcall('clientlink','click','page4','電話號碼已經登記');
                         $scope.loading = false;
                         $scope.$apply();
                     }, 0);
