@@ -343,7 +343,7 @@ a{
         position: absolute; 
         left:0; 
         right:0; 
-        bottom: 30px; 
+        bottom: 21px; 
         img{ width: 50%; }
         
     }
@@ -377,7 +377,10 @@ a{
         position: absolute;
         width: 100%;
         left: 0;
-        bottom: 66px;
+        bottom: 5vw;
+        @media only screen and (max-width: 575px) {
+            bottom: 12vw;
+        }
    }
 }
 
@@ -529,6 +532,38 @@ a{
 .pick{
     padding: 5px;
     width: 60%;
+}
+.pick2{
+    
+}
+.question2con{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    div{
+        text-align: center;
+    }
+    #question2img1{
+        width: 45%;
+        float: left;
+    }
+    #question2img2{
+        width: 51.3%;
+        float: right;
+    }
+    #question2img3{
+        width: 47%;
+        float: left;
+    }
+    #question2img4{
+        width: 49%;
+        float: right;
+    }
+    #question2img5{
+        width: 74%;
+        float: left;
+    }
 }
 .shadowfilter {
     -webkit-filter: drop-shadow(2px 0px 7px rgba(0, 0, 0, 0.5));
