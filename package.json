@@ -11,7 +11,7 @@
   "author": "Next Mobile",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.7.9",
+    "angular": "^1.8.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "cookie-parser": "^1.4.3",
