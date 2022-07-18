@@ -18,7 +18,7 @@
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "font-awesome": "^4.7.0",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "jquery-ui-touch-punch": "^0.2.3",
     "popper.js": "^1.14.4",
     "sass-loader": "^7.1.0",
