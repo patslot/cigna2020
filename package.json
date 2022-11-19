@@ -35,6 +35,6 @@
     "popper.js": "^1.14.4",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "webpack": "^2.7.0"
+    "webpack": "^5.75.0"
   }
 }
